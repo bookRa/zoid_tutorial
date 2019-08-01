@@ -1,6 +1,15 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
+import MyWidget from "./widget";
+
+let MyReactWidget = MyWidget.driver('react',{
+  React: React,
+  ReactDOM: ReactDOM
+})
+
+console.log(`Hey this is MyWidget: ${MyReactWidget}`)
 
 function App() {
   return (
@@ -19,6 +28,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <MyReactWidget name="foobar" />
     </div>
   );
 }
