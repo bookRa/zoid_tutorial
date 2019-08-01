@@ -2,7 +2,7 @@ import * as zoid from "zoid/dist/zoid.frameworks";
 
 let MyWidget = zoid.create({
     tag: 'my-widget',
-    url: 'localhost:2000'
+    url: 'http://localhost:2000/index.html'
 })
 
 console.log('yo! have loaded mywidget: ')
