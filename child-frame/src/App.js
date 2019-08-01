@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App(props) {
+  let [myWord, changeMyWord] = useState('')
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +12,13 @@ function App(props) {
         <p>
          Hello I'm a beautiful widget! My name is <code>{props.name || "undefined"}</code>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <input
+        value={myWord}
+        onChange={e=> changeMyWord(e.target.value)}
+        />
+        <button
+        onClick={()=>props.passDownFunc(myWord)}
+        >Pass this word up to parent</button>
       </header>
     </div>
   );

@@ -11,13 +11,17 @@ let MyReactWidget = MyWidget.driver('react',{
 
 console.log(`Hey this is MyWidget: ${MyReactWidget}`)
 
-function App() {
-  let [myThings, changeMyThings] = useState(["burger", "fries"])
+function App(props) {
+  const [myThings, setMyThings] = useState(["burger", "fries"])
+
+  const widgetFunc = word => setMyThings(myThings => [word, ...myThings])
+  console.log(myThings)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
+          {/* This is my count: {count} */}
           These are my things: {myThings.map((thing, idx) => {
             let randColor = Math.floor(Math.random()*16777215).toString(16);
             console.log(randColor)
@@ -30,7 +34,7 @@ function App() {
             className="randomThing">{thing}; </span>)
         })}.
         </p>
-        <MyReactWidget name="gooboy" />
+        <MyReactWidget name="gooboy" passDownFunc={widgetFunc} />
         <a
           className="App-link"
           href="https://reactjs.org"
