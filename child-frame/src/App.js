@@ -8,7 +8,7 @@ function App(props) {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         Hello I'm a beautiful widget! My name is <source>{props.name}</source>
+         Hello I'm a beautiful widget! My name is <code>{props.name || "undefined"}</code>
         </p>
         <a
           className="App-link"
