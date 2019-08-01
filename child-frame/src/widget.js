@@ -5,7 +5,7 @@ let MyWidget = zoid.create({
     url: 'http://localhost:2000/index.html'
 })
 
-console.log('yo! have loaded mywidget: ')
+console.log('yo! have loaded mywidget from child: ')
 console.log(MyWidget)
 
 export default MyWidget

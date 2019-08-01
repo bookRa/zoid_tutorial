@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
@@ -12,12 +12,23 @@ let MyReactWidget = MyWidget.driver('react',{
 console.log(`Hey this is MyWidget: ${MyReactWidget}`)
 
 function App() {
+  let [myThings, changeMyThings] = useState(["burger", "fries"])
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          These are my things: {myThings.map((thing, idx) => {
+            let randColor = Math.floor(Math.random()*16777215).toString(16);
+            console.log(randColor)
+            return (<span 
+            key={`thing${idx}`} 
+            style={{
+              color:`#${randColor}`,
+              fontWeight: "bold"
+            }}
+            className="randomThing">{thing}; </span>)
+        })}.
         </p>
         <MyReactWidget name="gooboy" />
         <a
