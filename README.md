@@ -1,7 +1,7 @@
 # Cross Domain Apps with Create React App and Zoid
 
-This repo is source for a [Youtube](https://youtube.com)
-video and [Medium](https://medium.com) article (also 
+This repo is source for a [Youtube](https://youtu.be/DvthKymFznU)
+video and [Medium](https://medium.com/@omar.abdelbadie1/cross-domain-react-apps-with-create-react-app-and-zoid-d6caae4380fe) article (also 
 available on my [Blog](https://bookra.github.io))
 
 ## Purpose
